@@ -17,7 +17,7 @@ const Navbar = () => {
           />
 
           <h1 className="text-lg sm:text-xl font-semibold tracking-wide">
-            Portfolio
+            Kapil
           </h1>
         </div>
 
