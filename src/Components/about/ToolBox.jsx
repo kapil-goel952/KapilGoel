@@ -56,7 +56,3 @@ const Toolbox = () => {
 };
 
 export default Toolbox;
-
-// adsfasdfasdfasdfewrvxcv zxx
-// adsfasdfasdfasdfewrvxcv zxx
-// dfghjkrtyuixcvbnmcvbnmasdfghjkjhgfdfghasdfdfasdfasdfasfasdfasdfasdfa

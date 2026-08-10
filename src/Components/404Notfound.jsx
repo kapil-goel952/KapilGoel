@@ -1,7 +1,3 @@
-// dfghjkrtyuixcvbnmcvbnmasdfghjkjhgfdfgh
-// dfghjkrtyuixcvbnmcvbnmasdfghjkjhgfdfgh
-// adsfasdfasdfasdfewrvxcv zxx
-// adsfasdfasdfasdfewrvxcv zxx
 
 import { Link } from "react-router-dom";
 import { Home, ArrowLeft, Sparkles } from "lucide-react";
