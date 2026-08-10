@@ -57,5 +57,4 @@ const CurrentlyExploring = () => {
     </div>
   );
 };
-
 export default CurrentlyExploring;
