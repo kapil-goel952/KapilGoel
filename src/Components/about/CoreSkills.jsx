@@ -96,3 +96,8 @@ const CoreSkills = () => {
 };
 
 export default CoreSkills;
+
+
+// adsfasdfasdfasdfewrvxcv zxx
+// adsfasdfasdfasdfewrvxcv zxx
+// asdfasdfasfasgxcvzxv
