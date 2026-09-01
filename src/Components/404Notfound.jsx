@@ -1,4 +1,4 @@
-
+```jsx
 import { Link } from "react-router-dom";
 import { Home, ArrowLeft, Sparkles } from "lucide-react";
 
@@ -12,7 +12,7 @@ const NotFound = () => {
         <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
       </div>
 
-      {/* Grid */}
+      {/* Background Grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -22,7 +22,8 @@ const NotFound = () => {
         }}
       />
 
-      <div className="relative z-10 text-center max-w-3xl">
+      {/* Content */}
+      <div className="relative z-10 max-w-3xl text-center">
 
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/20 bg-white/5 backdrop-blur-sm text-purple-400 text-sm">
@@ -41,7 +42,7 @@ const NotFound = () => {
         </h2>
 
         {/* Description */}
-        <p className="mt-6 text-gray-400 text-lg leading-relaxed max-w-xl mx-auto">
+        <p className="mt-6 mx-auto max-w-xl text-lg leading-relaxed text-gray-400">
           Looks like the page you're trying to visit has drifted out of orbit.
           The link may be broken, outdated, or simply doesn't exist anymore.
         </p>
@@ -66,10 +67,10 @@ const NotFound = () => {
           </button>
 
         </div>
-
       </div>
     </section>
   );
 };
 
 export default NotFound;
+```
