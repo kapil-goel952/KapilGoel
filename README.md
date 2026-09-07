@@ -88,3 +88,26 @@ Add dark/light mode
 Optimize performance
 
 Deploy the latest version
+
+
+🎯 Purpose
+
+The main purpose of this project is to:
+
+Build and improve my web development skills.
+Practice creating real-world projects.
+Maintain a professional online presence.
+Showcase my development journey.
+Learn and experiment with new technologies.
+👨‍💻 Author
+Kapil Goel
+
+Developer interested in building websites, applications, and software projects while continuously learning new technologies.
+
+🔗 GitHub: @kapil-goel952
+
+⭐ Support
+
+If you find this project interesting, consider giving the repository a ⭐ on GitHub!
+
+Thanks for visiting! 🚀
