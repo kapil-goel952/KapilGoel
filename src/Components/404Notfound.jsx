@@ -1,4 +1,4 @@
-```jsx
+
 import { Link } from "react-router-dom";
 import { Home, ArrowLeft, Sparkles } from "lucide-react";
 
@@ -73,4 +73,3 @@ const NotFound = () => {
 };
 
 export default NotFound;
-```
