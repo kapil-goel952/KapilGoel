@@ -1,38 +1,40 @@
-import React from 'react'
-import Home from './pages/Home'
-import Work from './pages/Work'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Navbar from './Components/navbar'
-import Footer from './Components/footer'
-import { Route } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-import NotFound from './Components/404Notfound'
 
+import { Route, Routes } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+import Navbar from "./Components/navbar";
+import Footer from "./Components/footer";
+import NotFound from "./Components/404Notfound";
 
 const App = () => {
   return (
-    <div className='px-30 font-serif w-screen min-h-screen bg-black'>
-      <div className='bg-gray-950 flex flex-col gap-2'>
+    <div className="min-h-screen w-full overflow-x-clip bg-black font-sans text-white">
+      <div className="mx-auto flex min-h-screen w-full max-w-[1600px] flex-col gap-3 bg-gray-950">
+        {/* Global navigation */}
         <Navbar />
 
-        <div className='grow'>
+        {/* Page content */}
+        <main className="min-w-0 flex-1">
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/Work' element={<Work />} />
-            <Route path='/About' element={<About />} />
-            <Route path='/Contact' element={<Contact />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/Work" element={<Work />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
 
-             <Route path="*" element={<NotFound />} />
+            {/* Unknown routes */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </main>
+
+        {/* Global footer */}
         <Footer />
       </div>
     </div>
-  )
-}
-// Creative developer focused on building immersive and meaningful experiences
-export default App
+  );
+};
 
-
+export default App;

@@ -1,88 +1,54 @@
-import React from 'react'
-import ProjectCard from './HomeProjectCard'
 
-const Projects = () => {
-    const projects = [
-        {
-            id: 1,
-            category: "Web App",
-            title: "Cyber Dashboard",
-            description:
-                "A futuristic dashboard for monitoring analytics, security events and system performance.",
-            technologies: ["React", "Tailwind", "Chart.js"],
-            link: "/"
-        },
+import { Link } from "react-router-dom";
+import { projects } from "../../data/projects";
+import ProjectCard from "../projects/ProjectCard";
 
-        {
-            id: 2,
-            category: "Mobile App",
-            title: "Fitness Tracker",
-            description:
-                "Track workouts, calories and daily activities with a modern mobile experience.",
-            technologies: ["React Native", "Firebase", "Expo"],
-            link: "/"
-        },
+const HomeProjects = () => {
+  const featuredProjects = projects.filter(
+    (project) => project.featured
+  );
 
-        {
-            id: 3,
-            category: "Game Development",
-            title: "Neon Runner",
-            description:
-                "A cyberpunk endless runner built in Unity featuring obstacles and power-ups.",
-            technologies: ["Unity", "C#", "Photoshop"],
-            link: "/"
-        },
+  return (
+    <section className="w-full rounded-2xl border border-gray-800 p-5 sm:p-6">
+      {/* Section heading */}
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+            <span className="text-purple-500">#</span>{" "}
+            Featured Projects
+          </h2>
 
-        {
-            id: 4,
-            category: "Web App",
-            title: "Portfolio V2",
-            description:
-                "Personal portfolio website with smooth animations and futuristic design.",
-            technologies: ["React", "Tailwind", "Framer Motion"],
-            link: "/"
-        },
-
-        {
-            id: 5,
-            category: "Experiment",
-            title: "AI Chat Interface",
-            description:
-                "A modern chat interface concept focused on usability and clean interactions.",
-            technologies: ["React", "OpenAI", "Tailwind"],
-            link: "/"
-        },
-
-        {
-            id: 6,
-            category: "Tool",
-            title: "Password Generator",
-            description:
-                "Generate secure passwords with customizable rules and strength indicators.",
-            technologies: ["JavaScript", "CSS", "HTML"],
-            link: "/"
-        }
-    ]
-
-
-    return (
-        <div className="border-2 border-gray-800 rounded-2xl p-5">
-            <div>
-                 <p className="text-white text-2xl sm:text-3xl font-semibold mb-6">
-                <span className="text-purple-500">#</span> Projects
-            </p>
-            </div>
-           <div id="card"  className=' flex gap-6  overflow-x-auto pb-4'>
-             {projects.map((project) => (
-                <ProjectCard
-                    key={project.id}
-                    project={project}
-                />
-            ))}
-           </div>
-           
+          <p className="mt-2 text-sm text-gray-400">
+            A selection of projects I have been building and exploring.
+          </p>
         </div>
-    )
-}
-// ld;fkjsadlkfj
-export default Projects
+
+        <Link
+          to="/Work"
+          className="w-fit rounded-lg border border-gray-700 px-4 py-2 text-sm text-white transition-colors hover:border-purple-500 hover:text-purple-400"
+        >
+          View All Projects →
+        </Link>
+      </div>
+
+      {/* Project cards */}
+      <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+          />
+        ))}
+      </div>
+
+      {/* Empty state */}
+      {featuredProjects.length === 0 && (
+        <p className="mt-6 text-sm text-gray-400">
+          Featured projects will appear here soon.
+        </p>
+      )}
+    </section>
+  );
+};
+
+export default HomeProjects;

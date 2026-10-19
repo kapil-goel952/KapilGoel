@@ -1,4 +1,3 @@
-import React from 'react'
 import Herosection from '../Components/work/WorkHerosection'
 import WorkProject from '../Components/work/WorkProject'
 import HaveIdea from '../Components/work/HaveIdea'

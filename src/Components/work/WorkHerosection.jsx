@@ -1,114 +1,133 @@
-import React from "react";
+
+import { Link } from "react-router-dom";
 import Hero from "../../assets/hero.svg";
+import { projects } from "../../data/projects";
 
-const Herosection = () => {
+const WorkHerosection = () => {
+  const featuredCount = projects.filter(
+    (project) => project.featured
+  ).length;
+
+  const categoryCount = new Set(
+    projects.map((project) => project.category)
+  ).size;
+
+  const stats = [
+    {
+      value: projects.length,
+      label: projects.length === 1 ? "Project Listed" : "Projects Listed",
+    },
+    {
+      value: featuredCount,
+      label: "Featured Projects",
+    },
+    {
+      value: categoryCount,
+      label: "Project Categories",
+    },
+  ];
+
   return (
-    <div className="bg-gray-950 border border-gray-800 rounded-xl flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-14 w-full font-sans">
+    <section className="relative w-full overflow-hidden rounded-2xl border border-gray-800 bg-gray-950 px-5 py-10 sm:px-8 sm:py-14 lg:px-12 lg:py-16">
+      {/* Background accents */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-600/10 blur-3xl"
+      />
 
-      {/* Left Section */}
-      <div className="text-white w-full lg:max-w-2xl">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 left-1/4 h-56 w-56 rounded-full bg-blue-500/10 blur-3xl"
+      />
 
-        {/* Heading */}
-        <p className="text-2xl font-black sm:text-3xl lg:text-4xl leading-snug  tracking-wide">
-          Projects that
-          <br />
-          <span className="text-purple-500">reflect ideas,</span>
-          <br />
-          code & <span className="text-blue-500">creativity</span>
-        </p>
-
-        {/* Subtext */}
-        <p className="pt-5 text-sm sm:text-base text-gray-400 leading-relaxed tracking-wide">
-          A collection of digital experiences, applications and experiments I
-          have built with passion and precision.
-        </p>
-
-        {/* Button */}
-        <button className="mt-5 bg-[#2c3036] border border-purple-500 text-sm text-white px-4 py-2 hover:bg-purple-500 hover:text-black transition-all duration-300 rounded-md">
-          View My Work !!
-        </button>
-
-        {/* Stats */}
-        <div className="flex flex-wrap gap-4 mt-7">
-
-          {/* Card 1 */}
-          <div className="border border-gray-700 rounded-lg flex items-center p-3 flex-1 min-w-52 hover:border-purple-500 transition-all duration-300">
-            <img
-              src="https://img.icons8.com/?size=100&id=tktxu35Z3Qh1&format=png&color=a855f7"
-              alt="projects"
-              className="h-8 w-8"
-            />
-            <div className="ml-3">
-              <p className="text-lg text-purple-500 font-semibold">15+</p>
-              <p className="text-xs text-gray-500">Projects</p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="border border-gray-700 rounded-lg flex items-center p-3 flex-1 min-w-52 hover:border-purple-500 transition-all duration-300">
-            <img
-              src="https://img.icons8.com/?size=100&id=999&format=png&color=a855f7"
-              alt="experience"
-              className="h-8 w-8"
-            />
-            <div className="ml-3">
-              <p className="text-lg text-purple-500 font-semibold">2+</p>
-              <p className="text-xs text-gray-500">Years Learning</p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="border border-gray-700 rounded-lg flex items-center p-3 flex-1 min-w-52 hover:border-purple-500 transition-all duration-300">
-            <img
-              src="https://img.icons8.com/?size=100&id=122581&format=png&color=a855f7"
-              alt="code"
-              className="h-7 w-7"
-            />
-            <div className="ml-3">
-              <p className="text-lg text-purple-500 font-semibold">10k+</p>
-              <p className="text-xs text-gray-500">Lines of Code</p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="border border-gray-700 rounded-lg flex items-center p-3 flex-1 min-w-52 hover:border-purple-500 transition-all duration-300">
-            <img
-              src="https://img.icons8.com/?size=100&id=8RdWP7lJ6Rir&format=png&color=a855f7"
-              alt="ideas"
-              className="h-8 w-8"
-            />
-            <div className="ml-3">
-              <p className="text-lg text-purple-500 font-semibold">∞</p>
-              <p className="text-xs text-gray-500">Ideas Exploring</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Right Section */}
-      <div className="mt-10 lg:mt-0 flex flex-col items-center shrink-0 w-full lg:w-auto">
-
-        <img
-          src={Hero}
-          alt="hero image"
-          className="w-full max-w-60 sm:max-w-80 lg:max-w-105 h-auto"
-        />
-
-        <div className="border border-purple-500 flex items-center mt-4 px-3 py-2 rounded-md">
-
-          <div className="w-2.5 h-2.5 bg-purple-500 mr-2 rounded-full"></div>
-
-          <p className="text-gray-400 text-xs sm:text-sm">
-            currently working on{" "}
-            <span className="font-medium text-white">Portfolio</span>
+      <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        {/* Introduction */}
+        <div>
+          <p className="inline-flex rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-2 text-xs font-medium tracking-wide text-purple-300 sm:text-sm">
+            Selected Work · Project Archive
           </p>
 
+          <h1 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Ideas into code.
+            <br />
+
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              Learning through building.
+            </span>
+          </h1>
+
+          <p className="mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8">
+            Explore my applications, development experiments, and ongoing
+            projects. Each one represents something I've built, learned,
+            or am continuing to improve.
+          </p>
+
+          {/* Functional links */}
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/Contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+            >
+              Discuss a Project
+              <span aria-hidden="true">↗</span>
+            </Link>
+
+            <a
+              href="https://github.com/kapil-goel952?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-gray-700 px-5 py-3 text-sm font-medium text-gray-200 transition-colors hover:border-purple-500 hover:text-white"
+            >
+              Explore GitHub
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          {/* Dynamic statistics */}
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-gray-800 bg-black/30 p-4"
+              >
+                <p className="text-2xl font-bold text-purple-400">
+                  {stat.value}
+                </p>
+
+                <p className="mt-1 text-xs leading-5 text-gray-400 sm:text-sm">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
+        {/* Existing illustration */}
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={Hero}
+            alt="Illustration representing software development"
+            className="h-auto w-full max-w-xs object-contain sm:max-w-sm lg:max-w-md"
+          />
+
+          <div className="mt-4 w-full max-w-sm rounded-xl border border-gray-800 bg-black/40 p-4">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-500">
+              Development approach
+            </p>
+
+            <p className="mt-2 font-semibold text-white">
+              Experiment. Build. Improve.
+            </p>
+
+            <p className="mt-1 text-sm leading-6 text-gray-400">
+              Practical projects, continuous learning, and exploring
+              new ideas through code.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Herosection;
+export default WorkHerosection;

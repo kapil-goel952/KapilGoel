@@ -1,97 +1,78 @@
-import React from "react";
 
-const skills = [
+const skillGroups = [
   {
-    name: "React",
-    image: "/images/react.png",
+    title: "Programming Languages",
+    description: "Languages I use while learning and building software.",
+    skills: ["Python", "C", "C++", "JavaScript", "SQL"],
   },
   {
-    name: "React Native",
-    image: "/images/react-native.png",
+    title: "Web Development",
+    description: "Technologies used to build this portfolio and web interfaces.",
+    skills: ["React", "Vite", "Tailwind CSS", "React Router"],
   },
   {
-    name: "JavaScript",
-    image: "/images/javascript.png",
+    title: "AI & Application Development",
+    description: "Tools used in my AI-powered learning assistant.",
+    skills: ["Streamlit", "Google Gemini API", "Firebase", "Cloud Firestore"],
   },
   {
-    name: "TypeScript",
-    image: "/images/typescript.png",
+    title: "Mobile & Systems",
+    description: "Areas I work with or continue to explore through projects.",
+    skills: ["React Native", "Expo", "Linux", "Unity"],
   },
   {
-    name: "Tailwind CSS",
-    image: "/images/tailwind.png",
-  },
-  {
-    name: "Node.js",
-    image: "/images/node.png",
-  },
-  {
-    name: "Firebase",
-    image: "/images/firebase.png",
-  },
-  {
-    name: "GraphQL",
-    image: "/images/graphql.png",
-  },
-  {
-    name: "Unity",
-    image: "/images/unity.png",
-  },
-  {
-    name: "C#",
-    image: "/images/csharp.png",
-  },
-  {
-    name: "Git",
-    image: "/images/git.png",
-  },
-  {
-    name: "MongoDB",
-    image: "/images/mongodb.png",
+    title: "Developer Tools",
+    description: "Tools used in my development workflow.",
+    skills: ["Git", "GitHub", "VS Code"],
   },
 ];
 
 const CoreSkills = () => {
   return (
-    <div className="bg-[#0b0f1a] border border-purple-900/30 rounded-2xl p-6 h-full">
-      <h2 className="text-purple-400 uppercase tracking-widest text-sm mb-8">
-        Core Skills
-      </h2>
+    <section className="h-full rounded-2xl border border-gray-800 bg-gray-950 p-5 sm:p-6">
+      <div>
+        <p className="text-xs font-medium uppercase tracking-widest text-purple-400">
+          Technologies
+        </p>
 
-      <div className="grid grid-cols-4 gap-4">
-        {skills.map((skill, index) => (
+        <h2 className="mt-2 text-xl font-semibold text-white sm:text-2xl">
+          My Developer Toolbox
+        </h2>
+
+        <p className="mt-2 text-sm leading-6 text-gray-400">
+          Technologies I have used in projects, practiced, or am currently
+          exploring.
+        </p>
+      </div>
+
+      <div className="mt-6 space-y-5">
+        {skillGroups.map((group) => (
           <div
-            key={index}
-            className="
-              bg-[#111827]
-              border
-              border-purple-900/20
-              rounded-xl
-              p-4
-              flex
-              flex-col
-              items-center
-              justify-center
-              hover:border-purple-500
-              hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]
-              transition-all
-            "
+            key={group.title}
+            className="border-t border-gray-800 pt-4 first:border-t-0 first:pt-0"
           >
-            <img
-              src={skill.image}
-              alt={skill.name}
-              className="w-10 h-10 object-contain mb-3"
-            />
+            <h3 className="font-medium text-white">
+              {group.title}
+            </h3>
 
-            <p className="text-white text-sm">
-              {skill.name}
+            <p className="mt-1 text-xs leading-5 text-gray-500 sm:text-sm">
+              {group.description}
             </p>
 
-            <div className="mt-3 h-0.5 w-full bg-linear-to-r from-purple-500 to-cyan-400 rounded-full" />
+            <div className="mt-3 flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-lg border border-gray-800 bg-black/30 px-3 py-2 text-xs text-gray-300 transition-colors hover:border-purple-500/60 hover:text-purple-300 sm:text-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

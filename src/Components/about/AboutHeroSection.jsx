@@ -1,200 +1,137 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../assets/hero.svg";
 
-const stats = [
+const interests = [
   {
-    icon: "https://img.icons8.com/?size=100&id=tktxu35Z3Qh1&format=png&color=a855f7",
-    alt: "projects",
-    value: "15+",
-    label: "Projects",
-    size: "h-10 w-10",
+    number: "01",
+    title: "AI Applications",
+    description:
+      "Exploring ways to build useful applications with AI APIs and Python.",
   },
   {
-    icon: "https://img.icons8.com/?size=100&id=999&format=png&color=a855f7",
-    alt: "experience",
-    value: "2+",
-    label: "Years Learning",
-    size: "h-10 w-10",
+    number: "02",
+    title: "Web & Mobile",
+    description:
+      "Building interfaces and experimenting with React and React Native.",
   },
   {
-    icon: "https://img.icons8.com/?size=100&id=122581&format=png&color=a855f7",
-    alt: "code",
-    value: "10k+",
-    label: "Lines of Code",
-    size: "h-8 w-8",
-  },
-  {
-    icon: "https://img.icons8.com/?size=100&id=8RdWP7lJ6Rir&format=png&color=a855f7",
-    alt: "ideas",
-    value: "∞",
-    label: "Ideas Exploring",
-    size: "h-10 w-10",
+    number: "03",
+    title: "Linux & Systems",
+    description:
+      "Learning how operating systems work and experimenting with KapilOS.",
   },
 ];
 
 const AboutHeroSection = () => {
   return (
-    <section
-      className="
-        relative overflow-hidden
-        rounded-3xl
-        border border-white/10
-        bg-linear-to-b from-gray-950 to-black
-        px-6 py-14
-        shadow-[0_0_60px_rgba(168,85,247,0.08)]
-        lg:px-20 lg:py-20
-      "
-    >
-      {/* Background Glow */}
+    <section className="relative w-full overflow-hidden rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-950 to-black px-5 py-10 sm:px-8 sm:py-14 lg:px-12 lg:py-16">
+      {/* Background accents */}
       <div
-        className="
-          absolute left-20 top-20
-          h-60 w-60
-          rounded-full
-          bg-purple-600/10
-          blur-[120px]
-        "
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-purple-600/10 blur-3xl"
       />
 
       <div
-        className="
-          absolute bottom-10 right-10
-          h-60 w-60
-          rounded-full
-          bg-blue-500/10
-          blur-[120px]
-        "
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 right-0 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"
       />
 
-      {/* Main Content */}
-      <div
-        className="
-          relative z-10
-          flex flex-col items-center
-          justify-between gap-16
-          lg:flex-row
-        "
-      >
-        {/* Left Content */}
-        <div className="w-full text-white lg:max-w-2xl">
-          <h1 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-            Who{" "}
-            <span className="bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              am I?
+      <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* Introduction */}
+        <div>
+          <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
+            About Me
+          </p>
+
+          <h1 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            Curious about technology.
+            <span className="mt-1 block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              Driven to build.
             </span>
           </h1>
 
-          <p className="mt-4 text-lg leading-relaxed text-gray-300 md:text-xl">
-            <span className="bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              I build, experiment and explore
-            </span>
-
-            <br />
-
-            <span className="bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              technologies that inspire.
-            </span>
+          <p className="mt-6 text-sm leading-7 text-gray-400 sm:text-base sm:leading-8">
+            I'm a BCA student and developer who enjoys learning by building
+            practical projects. I'm interested in software development,
+            AI-powered applications, mobile development, and understanding
+            how operating systems work.
           </p>
 
-          <p className="mt-6 max-w-xl text-sm leading-8 text-gray-400 md:text-base">
-            I'm a creative developer who loves turning complex ideas into
-            immersive digital experiences. I enjoy working with modern
-            technologies, hacking systems, building games, apps and futuristic
-            interfaces.
+          <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base sm:leading-8">
+            My projects give me a way to experiment with new technologies,
+            solve problems, and turn ideas into working software. I'm
+            continuing to grow my skills through hands-on development.
           </p>
 
-          {/* CTA */}
-          <Link
-            to="/work"
-            className="
-              mt-8 inline-flex
-              items-center justify-center
-              rounded-xl
-              bg-linear-to-r from-purple-600 to-blue-500
-              px-6 py-3
-              font-medium text-white
-              shadow-lg shadow-purple-500/20
-              transition-all duration-300
-              hover:scale-105
-            "
-          >
-            View My Work
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/Work"
+              className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+            >
+              Explore My Projects
+              <span aria-hidden="true">↗</span>
+            </Link>
 
-          {/* Stats */}
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="
-                  flex items-center
-                  rounded-xl
-                  border border-white/10
-                  bg-white/2
-                  p-4
-                  backdrop-blur-md
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  hover:border-purple-500/40
-                "
-              >
-                <img
-                  src={stat.icon}
-                  alt={stat.alt}
-                  className={stat.size}
-                />
-
-                <div className="ml-4">
-                  <p className="text-xl font-bold text-purple-500">
-                    {stat.value}
-                  </p>
-
-                  <p className="text-sm text-gray-500">
-                    {stat.label}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <Link
+              to="/Contact"
+              className="inline-flex items-center rounded-lg border border-gray-700 px-5 py-3 text-sm font-medium text-gray-200 transition-colors hover:border-purple-500 hover:text-white"
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
 
-        {/* Right Content */}
-        <div className="flex shrink-0 flex-col items-center">
+        {/* Existing illustration */}
+        <div className="flex flex-col items-center justify-center">
           <img
             src={Hero}
-            alt="hero"
-            className="
-              h-auto w-full
-              max-w-64
-              drop-shadow-[0_0_50px_rgba(168,85,247,0.25)]
-              sm:max-w-80
-              lg:max-w-105
-            "
+            alt="Illustration representing software development"
+            className="h-auto w-full max-w-xs object-contain sm:max-w-sm lg:max-w-md"
           />
 
-          {/* Current Project */}
-          <div
-            className="
-              mt-5
-              flex items-center gap-3
-              rounded-full
-              border border-white/10
-              bg-white/3
-              px-4 py-2
-              backdrop-blur-md
-            "
-          >
-            <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+          <div className="mt-4 w-full max-w-sm rounded-xl border border-gray-800 bg-white/[0.03] p-4">
+            <p className="text-xs font-medium uppercase tracking-widest text-gray-500">
+              My approach
+            </p>
 
-            <p className="text-sm text-gray-400">
-              currently working on{" "}
-              <span className="font-semibold text-white">
-                Portfolio
-              </span>
+            <p className="mt-2 text-lg font-semibold text-white">
+              Learn. Build. Improve.
+            </p>
+
+            <p className="mt-2 text-sm leading-6 text-gray-400">
+              I believe practical projects are one of the best ways to
+              understand technology and develop problem-solving skills.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Areas of interest */}
+      <div className="relative z-10 mt-12 border-t border-gray-800 pt-8">
+        <h2 className="text-xl font-semibold text-white sm:text-2xl">
+          What I'm interested in
+        </h2>
+
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {interests.map((interest) => (
+            <article
+              key={interest.number}
+              className="rounded-xl border border-gray-800 bg-black/30 p-5 transition-colors hover:border-purple-500/50"
+            >
+              <span className="text-sm font-semibold text-purple-400">
+                {interest.number}
+              </span>
+
+              <h3 className="mt-3 text-lg font-semibold text-white">
+                {interest.title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-gray-400">
+                {interest.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

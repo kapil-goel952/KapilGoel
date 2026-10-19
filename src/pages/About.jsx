@@ -1,4 +1,3 @@
-import React from 'react'
 import AboutHeroSection from '../Components/about/AboutHeroSection'
 import Philosophy from '../Components/work/Phylosophy'
 import CoreSkillMatrix from '../Components/about/CoreSkillMatrix'

@@ -1,100 +1,147 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from '../assets/asdf.png'
 
+import { Link } from "react-router-dom";
+import logo from "../assets/asdf.png";
+
+const navigationLinks = [
+  { label: "Home", to: "/" },
+  { label: "Work", to: "/Work" },
+  { label: "About", to: "/About" },
+  { label: "Contact", to: "/Contact" },
+];
+
+const projectLinks = [
+  {
+    label: "Notes Assistant AI",
+    href: "https://notes-assistance-ai.streamlit.app/",
+  },
+  {
+    label: "KapilOS",
+    href: "https://github.com/kapil-goel952/KapilOS",
+  },
+  {
+    label: "React Native",
+    href: "https://github.com/kapil-goel952/React-Native",
+  },
+];
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-950 border border-gray-700 rounded-xl w-full px-5 sm:px-10 lg:px-20 py-10">
+    <footer className="mt-6 w-full border-t border-gray-800 bg-gray-950 px-5 py-10 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        {/* Main footer */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr]">
+          {/* Brand */}
+          <div>
+            <Link
+              to="/"
+              aria-label="Kapil Goel home"
+              className="inline-flex items-center gap-3"
+            >
+              <img
+                src={logo}
+                alt=""
+                className="h-10 w-10 object-contain"
+              />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+              <span className="text-xl font-semibold tracking-wide text-white">
+                Kapil<span className="text-purple-400">.</span>
+              </span>
+            </Link>
 
-        {/* Brand Section */}
-        <div className="lg:col-span-1">
-
-          <div className="flex items-center gap-3">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-8 h-8 object-contain"
-            />
-
-            <h1 className="text-xl sm:text-2xl font-semibold text-white">
-              KAPIL
-            </h1>
-          </div>
-
-          <p className="text-gray-500 text-sm sm:text-base mt-3 leading-relaxed">
-            Building futuristic experiences
-            <br />
-            through code & creativity
-          </p>
-        </div>
-
-        {/* Navigation */}
-        <div className="border-l border-gray-700 pl-4">
-
-          <p className="text-sm sm:text-base text-purple-500 font-semibold">
-            NAVIGATION
-          </p>
-
-          <div className="flex flex-col gap-2 text-gray-400 text-sm mt-3">
-            <Link to="/" className="hover:text-white transition">Home</Link>
-            <Link to="/Work" className="hover:text-white transition">Work</Link>
-            <Link to="/About" className="hover:text-white transition">About</Link>
-            <Link to="/Contact" className="hover:text-white transition">Contact</Link>
-          </div>
-        </div>
-
-        {/* Contact */}
-        <div className="border-l border-gray-700 pl-4">
-
-          <p className="text-sm sm:text-base text-purple-500 font-semibold">
-            CONTACT
-          </p>
-
-          <div className="flex flex-col gap-2 text-gray-400 text-sm mt-3">
-            <a href="#" className="hover:text-white transition">GitHub</a>
-            <a href="#" className="hover:text-white transition">Email</a>
-            <a href="#" className="hover:text-white transition">LinkedIn</a>
-            <a href="#" className="hover:text-white transition">Instagram</a>
-          </div>
-        </div>
-
-        {/* Status */}
-        <div className="border-l border-gray-700 pl-4">
-
-          <p className="text-sm sm:text-base text-purple-500 font-semibold">
-            STATUS
-          </p>
-
-          <div className="flex items-center mt-3">
-            <div className="h-2 w-2 bg-green-400 rounded-full"></div>
-            <p className="text-gray-400 text-sm ml-2">
-              Available for Work
+            <p className="mt-4 max-w-sm text-sm leading-7 text-gray-400">
+              A developer and BCA student learning through practical
+              projects, exploring new technologies, and turning ideas
+              into working software.
             </p>
+
+            <a
+              href="https://github.com/kapil-goel952"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-purple-400 transition-colors hover:text-purple-300"
+            >
+              GitHub Profile
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
 
-          <p className="text-gray-500 text-sm mt-3 leading-relaxed">
-            Let's create something extraordinary together
-          </p>
-        </div>
+          {/* Navigation */}
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-white">
+              Navigation
+            </h2>
 
-        {/* Terminal */}
-        <div className="border border-gray-700 rounded-xl p-4">
-
-          <div className="space-y-1 text-blue-400 text-sm">
-            <p>&gt; stay curious</p>
-            <p>&gt; keep building</p>
-            <p>&gt; keep learning</p>
-            <p>&gt; think creative</p>
+            <nav aria-label="Footer navigation" className="mt-4">
+              <ul className="space-y-3">
+                {navigationLinks.map((item) => (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="text-sm text-gray-400 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
-          <p className="text-gray-500 text-xs mt-4">
-            designed with ❤️ using React
-          </p>
+          {/* Projects */}
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-white">
+              My Projects
+            </h2>
+
+            <ul className="mt-4 space-y-3">
+              {projectLinks.map((project) => (
+                <li key={project.label}>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-purple-400"
+                  >
+                    {project.label}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              ))}
+
+              <li>
+                <a
+                  href="https://github.com/kapil-goel952?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-purple-400"
+                >
+                  All repositories
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
+        {/* Bottom bar */}
+        <div className="mt-10 flex flex-col gap-3 border-t border-gray-800 pt-5 text-xs leading-5 text-gray-500 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
+          <p>
+            © {currentYear} Kapil Goel. All rights reserved.
+          </p>
+
+          <p>
+            Built with React, Vite, and Tailwind CSS.
+          </p>
+
+          <Link
+            to="/"
+            className="w-fit transition-colors hover:text-purple-400"
+          >
+            Back to Home ↑
+          </Link>
+        </div>
       </div>
     </footer>
   );

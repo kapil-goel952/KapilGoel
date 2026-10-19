@@ -1,6 +1,5 @@
-import React from 'react'
 import CurrentlyExploring from './CurrentlyExploring'
-import Toolbox from './Toolbox'
+import Toolbox from './ToolBox'
 
 const RecentlyExploringToolbox = () => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import CoreSkills from './CoreSkills'
 import SkillMatrix from './SkillsMatrix'
 

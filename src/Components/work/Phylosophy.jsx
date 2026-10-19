@@ -1,80 +1,71 @@
-import React from 'react'
+
+const principles = [
+  {
+    number: "01",
+    title: "Learn by Building",
+    description:
+      "I learn best by turning concepts into working projects, testing ideas, and solving problems along the way.",
+  },
+  {
+    number: "02",
+    title: "Stay Curious",
+    description:
+      "I enjoy exploring different areas of technology, from AI-powered applications to mobile development and Linux systems.",
+  },
+  {
+    number: "03",
+    title: "Improve with Every Project",
+    description:
+      "Every project is an opportunity to understand something more deeply, write better code, and build more useful software.",
+  },
+];
 
 const Philosophy = () => {
-    return (
-        <section className="w-full border border-[#1c2333] rounded-xl overflow-hidden bg-[#050816]">
+  return (
+    <section className="w-full overflow-hidden rounded-2xl border border-gray-800 bg-gray-950">
+      {/* Introduction */}
+      <div className="border-b border-gray-800 p-6 sm:p-8 lg:p-10">
+        <p className="text-xs font-medium uppercase tracking-widest text-purple-400">
+          My Philosophy
+        </p>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-1">
+        <h2 className="mt-4 max-w-3xl text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+          Technology matters most when we use it to{" "}
+          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            solve meaningful problems.
+          </span>
+        </h2>
 
-                {/* Left Side */}
-                <div className="p-8 lg:p-10">
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
+          I don't want to learn technologies just to collect them. I want to
+          understand how they work, experiment with them, and use what I learn
+          to build practical things.
+        </p>
+      </div>
 
-                    <p className="text-purple-500 text-sm tracking-widest mb-8">
-            // MY PHILOSOPHY
-                    </p>
+      {/* Principles */}
+      <div className="grid grid-cols-1 gap-px bg-gray-800 md:grid-cols-3">
+        {principles.map((principle) => (
+          <article
+            key={principle.number}
+            className="bg-gray-950 p-6 transition-colors hover:bg-gray-900/70 sm:p-7"
+          >
+            <span className="text-sm font-semibold text-purple-400">
+              {principle.number}
+            </span>
 
-                    <div className="flex gap-4">
+            <h3 className="mt-4 text-lg font-semibold text-white">
+              {principle.title}
+            </h3>
 
-                        <span className="text-7xl text-purple-600 leading-none">
-                            "
-                        </span>
+            <p className="mt-3 text-sm leading-7 text-gray-400">
+              {principle.description}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-                        <h1 className="text-white text-2xl md:text-4xl font-semibold leading-tight">
-
-                            Technology becomes{" "}
-                            <span className="text-purple-500">
-                                powerful
-                            </span>
-
-                            <br />
-
-                            when it creates{" "}
-                            <span className="text-purple-500">
-                                meaningful
-                            </span>
-
-                            <br />
-
-                            experiences.
-
-                        </h1>
-
-                    </div>
-
-                </div>
-
-                {/* Center Text */}
-                <div className="flex items-center px-8 py-10">
-                    <p className="text-gray-400 text-sm md:text-base leading-7">
-                        I believe in continuous learning,
-                        open-source contribution and 
-                        using technology to solve real-world problems.
-
-                        <span className="text-cyan-400">
-                            {" "}Every project{" "}
-                        </span>
-
-                        is a new opportunity to grow and
-                        create impact.
-                    </p>
-
-                </div>
-
-                {/* Right Image */}
-                <div className="h-full min-h-62.5">
-
-                    <img
-                        src="/brain.png"
-                        alt="Brain"
-                        className="w-full h-full object-cover"
-                    />
-
-                </div>
-
-            </div>
-
-        </section>
-    )
-}
-
-export default Philosophy
+export default Philosophy;
