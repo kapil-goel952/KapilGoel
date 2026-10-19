@@ -30,64 +30,58 @@ The website focuses on a clean, responsive, and user-friendly interface.
 ⚡ Fast & Lightweight — Designed for a smooth browsing experience
 
 
-🛠️ Technologies Used
-HTML5 — Website structure
-CSS3 — Styling and responsive design
-JavaScript — Interactivity and functionality
-Git & GitHub — Version control and project hosting
-📂 Project Structure
-KapilGoel/
-│
-├── assets/          # Images and other assets
-├── css/             # Stylesheets
-├── js/              # JavaScript files
-├── index.html       # Main webpage
-├── README.md        # Project documentation
-└── ...
+## 🛠️ Technologies Used
 
-The exact folder structure may change as the project continues to develop.
+- React — reusable UI components
+- Vite — development server and production builds
+- Tailwind CSS — styling
+- React Router DOM — page navigation
+- Lucide React — icons
+- JavaScript, HTML5 and CSS3
+- Git and GitHub — version control
 
-🚀 Getting Started
-1. Clone the Repository
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- Git
+- Visual Studio Code (recommended)
+
+### Installation
+
+Clone the repository:
+
+```bash
 git clone https://github.com/kapil-goel952/KapilGoel.git
-2. Open the Project
-
-Navigate into the project folder:
-
 cd KapilGoel
-3. Run the Website
+```
 
-You can open index.html directly in your browser.
+Install dependencies:
 
-For a better development experience, you can also use the Live Server extension in VS Code.
+```bash
+npm install
+```
 
-📸 Preview
+Start the development server:
 
-You can visit the live version of my portfolio here:
+```bash
+npm run dev
+```
 
-🔗 Visit My Portfolio
+Open the local URL shown in your terminal.
 
-Replace the link above with your deployed portfolio URL once it is available.
+### Production Build
 
-📌 Future Improvements
+To verify the production build:
 
-Some improvements planned for future versions:
+```bash
+npm run build
+```
 
-Add more projects
+### Windows PowerShell Note
 
-Improve animations and transitions
-
-Add a dedicated project details page
-
-Improve accessibility
-
-Add a downloadable resume
-
-Add dark/light mode
-
-Optimize performance
-
-Deploy the latest version
+If PowerShell blocks `npm.ps1`, use `npm.cmd install`, `npm.cmd run dev`, or `npm.cmd run build` instead.
 
 
 🎯 Purpose
